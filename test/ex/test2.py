@@ -19,3 +19,4 @@ result += l
 print(f"{"Grade Report":>{len(":Sub No.: Subject Name  Grade Report")}}",l,h,l,result,sep="\n")
 print(f":{"Total":>{len("Sub No.: Subject Name                ")}}{":":>{len("   1.0 :    F  ")}}  {tc:2}   : {tp:4.1f} :")
 print(l,f": {f"Grade Point Average(GPA) : {tp / tc:.2f}":<{len("                               Total              :  18   :  0.0 ")}}:",l,sep="\n")
+# test
