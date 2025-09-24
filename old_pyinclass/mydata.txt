@@ -1,0 +1,5 @@
+Hello, text file
+Salary : 1200.5
+somchaicheingpongpan
+PythonFile
+namesurname

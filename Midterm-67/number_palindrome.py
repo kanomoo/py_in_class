@@ -40,3 +40,4 @@ for i in range(len(num)): print(" " * i,num[::-1][i:],num[1:(len(num) - i)],sep=
 #
 #     print()
 #     l -= 1
+#
