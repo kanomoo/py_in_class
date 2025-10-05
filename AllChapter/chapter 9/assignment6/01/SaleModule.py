@@ -1,6 +1,6 @@
 #นายปภาวิน ธิติชุณหกุล 6806021612037
 from random import randint
-def random_and_save(filename = r"AllChapter/chapter 9/assignment6/Sale.txt",no = 15,day = 7):
+def random_and_save(filename = r"AllChapter/chapter 9/assignment6/01/Sale.txt",no = 15,day = 7):
     with open(filename,"w") as fin:
         for i in range(no):
             sale = []
@@ -8,7 +8,7 @@ def random_and_save(filename = r"AllChapter/chapter 9/assignment6/Sale.txt",no =
                 sale.append(randint(500,5000))
             fin.write(",".join([str(i) for i in sale])+"\n")
 
-def report_sale(filename = r"AllChapter/chapter 9/assignment6/Sale.txt"):
+def report_sale(filename = r"AllChapter/chapter 9/assignment6/01/Sale.txt"):
     with open(filename,"r") as fout:
         datas = []
         for i in fout:
