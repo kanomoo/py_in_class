@@ -1,6 +1,6 @@
 #นายปภาวิน ธิติชุณหกุล 6806021612037
-from random import randint
 def random_and_save(filename = r"AllChapter/chapter 9/assignment6/01/Sale.txt",no = 15,day = 7):
+    from random import randint
     with open(filename,"w") as fin:
         for i in range(no):
             sale = []
