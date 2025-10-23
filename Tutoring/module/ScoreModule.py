@@ -16,7 +16,6 @@ def report_score(file):
     with open(file,"r",encoding="utf-8") as fout:
         for i in fout:
             data.append([int(n) for n in i.strip("\n").split(",")])
-
     head = f"| No.|Project(15)|  HW(25)   |  MID(30)  | FINAl(30) |TOTAL(100) |GRADE|"
     line = "=" * len(head)
     result = f"{line}\n{head}\n{line}\n"
@@ -38,5 +37,5 @@ def report_score(file):
         result += f"     {sum([n[i] for n in data]) / len(data):5,.2f} |"
     result += f"     {totals / len(data):5,.2f} |"
     result += f"     |\n{line}"
-
     print(result)
+
