@@ -1,0 +1,7 @@
+6860010,paphavin Thi,A,B,B+,C+,C,F
+6800001,jerm sankmydic,F,B,D+,D,A,C
+6806402,Oliver Bennett,A,D+,B,C,F,D
+6806242,Amelia Carter,C,F,A,D+,D,B
+6806562,Ethan Wright,D,A,C,B,F,D+
+6806678,Sophia Turner,B,D+,C,A,F,D
+6806069,Lucas Mitchell,F,B,D,C,A,D+
