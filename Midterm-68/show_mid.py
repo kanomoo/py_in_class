@@ -1,6 +1,6 @@
 # a, b, c, d = True, False, True, False
 # print( a and b or c or d)
-#
+
 # print( a and b and c or d)
 
 # x = 20
@@ -120,7 +120,7 @@
 #     result += str(num2)
 #     num = num // 2
 # print(result[::-1])
-#
+
 # num,result = int(input("Enter number : ")), 0
 # n = 0
 # for i in str(num)[::-1]:
@@ -136,9 +136,12 @@
 #     num2 = num % 2
 #     result += str(num2)
 #     num = num // 2
-#
+
 # print(result[::-1])
 # print(result2)
+
+
+
 
 # while True:
 #     name = input("Enter text(enter-exit) : ")
