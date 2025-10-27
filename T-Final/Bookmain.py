@@ -8,15 +8,15 @@ def main():
                 print("Exit Program...")
                 exit()
             case "1":
-                add_book()
+                add_book(r"T-Final/book.txt")
             case "2":
-                edit_book()
+                edit_book(r"T-Final/book.txt")
             case "3":
-                del_book()
+                del_book(r"T-Final/book.txt")
             case "4":
-                read_file() 
+                read_file(r"T-Final/book.txt") 
             case "5":
-                report_book()
+                report_book(r"T-Final/book.txt")
 
 if __name__ == "__main__":
     main()
