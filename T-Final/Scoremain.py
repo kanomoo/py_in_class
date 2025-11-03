@@ -1,3 +1,4 @@
+#นายปภาวิน ธิติชุณหุล 6806021612037 it sec 3
 from ScoreModule import report_score, all_score
 
 def main():

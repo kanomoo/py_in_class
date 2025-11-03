@@ -1,3 +1,4 @@
+#นายปภาวิน ธิติชุณหุล 6806021612037 it sec 3
 def report_score(filename):
     data = all_score(filename)
     for i in data:
