@@ -45,6 +45,82 @@
 
 
 
-num = int(input("Enter num : "))
-for i in range(1,num + 1): print(" " * (num - i) + "*" * i)
+# num = int(input("Enter num : "))
+# for i in range(1,num + 1): print(" " * (num - i) + "*" * i)
 
+
+# for i  in range(5): print("*", i)
+
+
+
+# count = int(input("Enter number : "))
+# while True:
+#     if count == 0: break
+#     else: count = int(input("Enter number : "))
+
+
+
+
+
+# end = int(input("Enter number"))
+# count = 0
+# while count <= end:
+#     count += 1
+#     if count == 5: continue
+#     elif count >= 10: break
+#     print(count)
+
+
+
+# name = "111111111111111111111"
+# count_a = 0
+# count_b = 0
+# for i in name:
+#     if i == "A": count_a += 1
+#     elif i == "B": count_b += 1
+
+# print(f"A = {count_a}, B = {count_b}")
+
+
+
+
+# num = int(input("Enter mount: "))
+# if num > 0 and num <= 12:
+#     if num == 2: print(28)
+#     elif (num <= 7):
+#         if (num % 2 == 0): print(30)
+#         else: print(31)
+#     elif num >= 8:
+#         if (num % 2 == 0): print(31)
+#         else: print(30)
+# else: print("No mount")
+
+
+
+
+
+# while True:
+#     num = int(input("Enter mount: (-1 is Exit) : "))
+#     if num > 0 and num <= 12:
+#         if num == 2: print("Day : 28")
+#         elif (num <= 7):
+#             if (num % 2 == 0): print("Day : 30")
+#             else: print("Day : 31")
+#         elif num >= 8:
+#             if (num % 2 == 0): print("Day : 31")
+#             else: print("Day : 30")
+#     elif num == -1:
+#         print("Exit Program.")
+#         break
+#     else: print("No mount")
+
+
+
+
+num = input("Enter number : ")
+
+# num_re = ""
+# for i in num: num_re = i + num_re
+# print(num_re)
+
+# for i in range((len(num) - 1),0,-1): print(num[i])
