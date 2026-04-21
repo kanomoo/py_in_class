@@ -117,10 +117,24 @@
 
 
 
-num = input("Enter number : ")
+# num = input("Enter number : ")
 
 # num_re = ""
 # for i in num: num_re = i + num_re
 # print(num_re)
 
 # for i in range((len(num) - 1),0,-1): print(num[i])
+
+# num = 1234
+# print(num % 10)
+# num = num // 10
+# print(num % 10)
+
+# num, num_re = 1234, ""
+# while True:
+#     if num != 0:
+#         num_re += str(num % 10)
+#         num = num // 10
+#     else:
+#         print(num_re)
+#         break
