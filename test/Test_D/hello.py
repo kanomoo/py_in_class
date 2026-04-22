@@ -138,3 +138,25 @@
 #     else:
 #         print(num_re)
 #         break
+
+
+
+def displayName(name, score):
+    print(name + " managed to get into position " + str(calculateHighScorePosition(score)) + " on the high score list")
+
+def calculateHighScorePosition(score):
+    result = 0
+    if (score >= 1000): result = 1
+    elif (score >= 500): result = 2
+    elif (score >= 100): result = 3
+    else: result = 4
+    return result
+
+nameList, scoreList = ["Tom", "Bob", "Percy", "Gilbert", "James"], [1500, 1000, 500, 100, 25]
+
+for index, value in enumerate(nameList): displayName(value, scoreList[index])
+# displayName("Tom", 1500)
+# displayName("Bob", 1000)
+# displayName("Percy", 500)
+# displayName("Gilbert", 100)
+# displayName("James", 25)
