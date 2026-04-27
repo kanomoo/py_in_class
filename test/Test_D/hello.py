@@ -117,11 +117,12 @@
 
 
 
-# num = input("Enter number : ")
-
-# num_re = ""
+# num, num_re = input("Input : "), ""
 # for i in num: num_re = i + num_re
-# print(num_re)
+# print("Output: ", "Palindrome" if num == num_re else "Not Palindrome")
+
+txt = "123456"
+for i in range(0, len(txt), 2): print(txt[i])
 
 # for i in range((len(num) - 1),0,-1): print(num[i])
 
@@ -141,22 +142,22 @@
 
 
 
-def displayName(name, score):
-    print(name + " managed to get into position " + str(calculateHighScorePosition(score)) + " on the high score list")
+# def displayName(name, score):
+#     print(name + " managed to get into position " + str(calculateHighScorePosition(score)) + " on the high score list")
 
-def calculateHighScorePosition(score):
-    result = 0
-    if (score >= 1000): result = 1
-    elif (score >= 500): result = 2
-    elif (score >= 100): result = 3
-    else: result = 4
-    return result
+# def calculateHighScorePosition(score):
+#     result = 0
+#     if (score >= 1000): result = 1
+#     elif (score >= 500): result = 2
+#     elif (score >= 100): result = 3
+#     else: result = 4
+#     return result
 
-nameList, scoreList = ["Tom", "Bob", "Percy", "Gilbert", "James"], [1500, 1000, 500, 100, 25]
+# nameList, scoreList = ["Tom", "Bob", "Percy", "Gilbert", "James"], [1500, 1000, 500, 100, 25]
 
-for index, value in enumerate(nameList): displayName(value, scoreList[index])
-# displayName("Tom", 1500)
-# displayName("Bob", 1000)
-# displayName("Percy", 500)
-# displayName("Gilbert", 100)
-# displayName("James", 25)
+# for index, value in enumerate(nameList): displayName(value, scoreList[index])
+# # displayName("Tom", 1500)
+# # displayName("Bob", 1000)
+# # displayName("Percy", 500)
+# # displayName("Gilbert", 100)
+# # displayName("James", 25)
