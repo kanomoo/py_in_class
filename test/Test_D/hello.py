@@ -115,21 +115,33 @@
 #     else: print("No mount")
 
 
+# txt = "123456"
+# for i in range(0, len(txt), 2): print(txt[i])
+
+# for i in range((len(num) - 1),0,-1): print(num[i])
+
 
 
 # num, num_re = input("Input : "), ""
 # for i in num: num_re = i + num_re
-# print("Output: ", "Palindrome" if num == num_re else "Not Palindrome")
+# print("Output: ", "Palindrome" if num == num_re else "Not Palindrome", sep="")
 
-txt = "123456"
-for i in range(0, len(txt), 2): print(txt[i])
+count = 0
+for i in range(1,101):
+    if (i % 7 == 0):
+        if count < 5:
+            print(i, end = " ")
+            count += 1
+        else: break
+    
 
-# for i in range((len(num) - 1),0,-1): print(num[i])
+
 
 # num = 1234
 # print(num % 10)
 # num = num // 10
 # print(num % 10)
+
 
 # num, num_re = 1234, ""
 # while True:
@@ -139,6 +151,13 @@ for i in range(0, len(txt), 2): print(txt[i])
 #     else:
 #         print(num_re)
 #         break
+    
+    
+# num, num_re = 1234, ""
+# while num != 0:
+#         num_re += str(num % 10)
+#         num = num // 10
+# print(num_re)
 
 
 
