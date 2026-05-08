@@ -126,13 +126,13 @@
 # for i in num: num_re = i + num_re
 # print("Output: ", "Palindrome" if num == num_re else "Not Palindrome", sep="")
 
-count = 0
-for i in range(1,101):
-    if (i % 7 == 0):
-        if count < 5:
-            print(i, end = " ")
-            count += 1
-        else: break
+# count = 0
+# for i in range(1,101):
+#     if (i % 7 == 0):
+#         if count < 5:
+#             print(i, end = " ")
+#             count += 1
+#         else: break
     
 
 
@@ -180,3 +180,107 @@ for i in range(1,101):
 # # displayName("Percy", 500)
 # # displayName("Gilbert", 100)
 # # displayName("James", 25)
+
+# count = 0
+# output = ""
+# for i in range(1, 101):
+#     if count <= 1:
+#         output += str(i) + " "
+#         count += 1
+#     if count >= 2:
+#         count = 0
+#         print(output)
+#         output = ""
+
+# money, total, i = 0, 0, 0
+# while True:
+#     i += 1
+#     money = int(input(f"Day {i} : "))
+#     total += money
+#     if total >= 1000:
+#         break
+
+
+
+
+# total = 0
+# for i in range(1,101):
+#     total += i
+#     print(f"{total - i} + {i} = {total}")
+
+
+
+# num = int(input("enter number : "))
+# for i in range(1,13):
+#     print(str(num) + " * " + str(i) + " = " + str(num * i))
+
+# number = 0
+# if number < 1:
+#     pass
+# elif number > 100:
+#     pass
+# else:
+#     for i in range(13):
+
+# print(f"|{"1000":>10}|")
+
+# print(f"|{"1000".rjust(10)}|")
+
+# print(format(1000, ",.2f").center(10))
+# print(format(1000, "^10,.2f"))
+
+
+# head = "+----------------------------------------+"
+# Len = len(head) - 2
+# money = 0
+# output = head + f"\n|{"Currency Convert":^{Len}}|\n" + head + f"\n|{"0.Exit":<{Len}}|\n|{"1.Enter money":<{Len}}|\n|{"2.Convert THB to USD(33 THB / 1 USD)":<{Len}}|\n|{"3.Convert THB to JPY(0.2 THB / 1 JPy)":<{Len}}|\n|{"4.Convert THB to EUR(37 THB / 1 EUR)":<{Len}}|"
+# output += "\n" + head
+# output += "\nEnter choice : "
+# choice = int(input(output))
+# match choice:
+#     case 0:
+#         print("Exit Program.")
+#         exit
+#     case 1:
+#         money = int(input("Enter money : "))
+#         print(f"your money : {money:,.2f} (THB)")
+#     case 2:
+#         print("test")
+#     case 3:
+#         print("asdfasdf")
+
+
+# choice = int(input("Enter choice : "))
+# if choice == 1: print("test = 1")
+# elif choice == 2: print("test = 2")
+# else: print("No Choice")
+    
+    
+# choice = int(input("Enter choice : "))
+# match choice:
+#     case 1: print("test = 1")
+#     case 2: print("test = 2")
+#     case _: print("No Choice")
+
+
+
+
+# output = ""
+# head = "+----------------------------------------+\n"
+# output += head
+# output += f"|{"Currency Convert":^40}|\n"
+# output += head
+# output += f"|{"1.Enter money":<40}|\n"
+# output += f"|{"2.Enter money":<40}|\n"
+# output += head
+# output += "Enter choice : "
+# choice = input(output)
+
+
+# print(("+----------------------------------------+"))
+# print(f"|{"Currency Convert":^40}|")
+# print(("+----------------------------------------+"))
+# print(f"|{"1.Enter money":<40}|")
+# print(f"|{"2.Csdfads":<40}|")
+# print(("+----------------------------------------+"))
+# choice = input("Enter choice : ")
