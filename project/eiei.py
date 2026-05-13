@@ -7,6 +7,7 @@ amount= float(input("Enter amount : "))
 rate = float(input("Enter rate : "))
 year = float(input("Enter Year : "))
 
-totalrate = amount * (1+rate/100) ** year
+titrate = amount * (1+rate/100) ** year
 
-print ("future Value = ",totalrate)
+print ("future Value = ",titrate)
+print ("interest = ", titrate - amount)
