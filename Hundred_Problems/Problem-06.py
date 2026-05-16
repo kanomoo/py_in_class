@@ -9,14 +9,14 @@
 #     else: return "is not prime"
 
 
-def check_prime(n: int) -> str:
-    if n <= 1: return "is not prime"
-    count = 0
-    for i in range(1, n + 1):
-        if n % i == 0:
-            count += 1
-    if count == 2: return "is prime"
-    else: return "is not prime"
+# def check_prime(n: int) -> str:
+#     if n <= 1: return "is not prime"
+#     count = 0
+#     for i in range(1, n + 1):
+#         if n % i == 0:
+#             count += 1
+#     if count == 2: return "is prime"
+#     else: return "is not prime"
 
 
 # def check_prime(n: int) -> str:
@@ -30,4 +30,15 @@ def check_prime(n: int) -> str:
 #     return "is prime"
 
 
-print(check_prime(17))
+# print(check_prime(17))
+
+import math
+
+def check_prime(n: int) -> str:
+    if n >= 1 and n <= 10000:
+        for i in range(2, round(math.sqrt(n + 1) + 1)): return "is prime" if n % i == 0 else "is not prime"
+        else: return "is not prime"
+    else: return "not range"
+
+if __name__ == "__main__":
+    print(check_prime(1))
