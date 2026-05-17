@@ -10,9 +10,19 @@
 #
 # print(separate_by_index("Hello World"))
 
-def separate_by_index(s: str) -> tuple[str, str]:
-    even = s[::2]
-    odd = s[1::2]
-    return even,odd
+# def separate_by_index(s: str) -> tuple[str, str]:
+#     even = s[::2]
+#     odd = s[1::2]
+#     return even,odd
 
-print(separate_by_index("Hello World"))
+# print(separate_by_index("Hello World"))
+
+def separate_by_index(s: str) -> tuple[str, str]:
+    text = ()
+    if len(s) >= 1 and len(s) <= 100:
+        even, odd = s[0::2], s[1::2]
+        text = even, odd
+    return text
+
+if __name__ == "__main__":
+    print(separate_by_index("Hello World"))
