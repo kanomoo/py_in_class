@@ -20,8 +20,10 @@
 
 
 def replace_characters(s: str) -> str:
-    s = s.replace("a", "@").replace("A", "@").replace("l", "1").replace("L", "1").replace("o", "0").replace("O", "0")
-    return s
+    if len(s) >= 1 and len(s) <= 100:
+        s = s.replace("a", "@").replace("A", "@").replace("l", "1").replace("L", "1").replace("o", "0").replace("O", "0")
+        return s
+    else: return "string out of length"
 
 if __name__ == "__main__":
     print(replace_characters("Hello World"))
