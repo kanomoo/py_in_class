@@ -10,10 +10,18 @@
 #             case _: mess += i
 #     return mess
 
+# def replace_characters(s: str) -> str:
+#     s = s.replace("a","@").replace("A","@")
+#     s = s.replace("l","1").replace("L","1")
+#     s = s.replace("o","0").replace("O","0")
+#     return s
+
+# print(replace_characters("HELLO WORLD"))
+
+
 def replace_characters(s: str) -> str:
-    s = s.replace("a","@").replace("A","@")
-    s = s.replace("l","1").replace("L","1")
-    s = s.replace("o","0").replace("O","0")
+    s = s.replace("a", "@").replace("A", "@").replace("l", "1").replace("L", "1").replace("o", "0").replace("O", "0")
     return s
 
-print(replace_characters("HELLO WORLD"))
+if __name__ == "__main__":
+    print(replace_characters("Hello World"))
