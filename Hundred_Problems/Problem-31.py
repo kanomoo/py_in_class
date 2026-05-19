@@ -9,15 +9,31 @@
 #         if sales[n] == max:
 #             return n,max
 
-def highest_sales_country(sales: dict[str, int]) -> tuple[str, int]:
-    Max = max(sales, key=sales.get) #key=sales.get คือให้ใช้ยอดขาย (value) ของแต่ละประเทศในการเปรียบเทียบ
-    return Max, sales[Max]
+# def highest_sales_country(sales: dict[str, int]) -> tuple[str, int]:
+#     Max = max(sales, key=sales.get) #key=sales.get คือให้ใช้ยอดขาย (value) ของแต่ละประเทศในการเปรียบเทียบ
+#     return Max, sales[Max]
 
-sales_data = {
-    "Thailand": 1500,
-    "Laos": 1200,
-    "Vietnam": 1800,
-    "Japan": 1700,
-    "China": 2000
-}
-print(highest_sales_country(sales_data))
+# sales_data = {
+#     "Thailand": 1500,
+#     "Laos": 1200,
+#     "Vietnam": 1800,
+#     "Japan": 1700,
+#     "China": 2000
+# }
+# print(highest_sales_country(sales_data))
+
+
+
+
+
+
+
+
+
+# def highest_sales_country(sales: dict[str, int]) -> tuple[str, int]:
+#     top_country = max(sales , key = sales.get)
+#     return top_country , sales[top_country]
+
+# if __name__ == "__main__":
+#     sales = {"Thailand": 1500, "Laos": 1200, "Vietnam": 1800, "Japan": 1700, "China": 2000}
+#     print(highest_sales_country(sales))
