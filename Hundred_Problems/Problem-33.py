@@ -33,19 +33,29 @@
 #
 #     return  result
 
-def calculate_median(provinces: dict[str, int]) -> list[tuple[str, int]]:
-    value = sorted(provinces.values())
-    n = len(value)
-    if n % 2 != 0:
-        median = value[n // 2]
-    else:
-        median = value[n // 2 - 1] + value[n // 2] / 2
-    result = []
-    for k,v in provinces.items():
-        if median == v:
-            result.append((k,v))
-    return result
 
-# ตัวอย่างการใช้งาน
-data = {'Thailand': 76, 'Laos': 17, 'Vietnam': 58, 'Japan': 47, 'China': 23}
-print(calculate_median(data))
+
+# def calculate_median(provinces: dict[str, int]) -> list[tuple[str, int]]:
+#     value = sorted(provinces.values())
+#     n = len(value)
+#     if n % 2 != 0:
+#         median = value[n // 2]
+#     else:
+#         median = value[n // 2 - 1] + value[n // 2] / 2
+#     result = []
+#     for k,v in provinces.items():
+#         if median == v:
+#             result.append((k,v))
+#     return result
+
+# # ตัวอย่างการใช้งาน
+# data = {'Thailand': 76, 'Laos': 17, 'Vietnam': 58, 'Japan': 47, 'China': 23}
+# print(calculate_median(data))
+
+
+def calculate_median(provinces: dict[str, int]) -> list[tuple[str, int]]:
+    return sorted([value for value in provinces.values()])[len(provinces) // 2]
+
+if __name__ == "__main__":
+    dict_country = {"Thailand": 76, "Laos": 17, "Vietnam": 58, "Japan": 47, "China": 23}
+    print(calculate_median(dict_country))

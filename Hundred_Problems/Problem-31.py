@@ -24,12 +24,6 @@
 
 
 
-
-
-
-
-
-
 # def highest_sales_country(sales: dict[str, int]) -> tuple[str, int]:
 #     top_country = max(sales , key = sales.get)
 #     return top_country , sales[top_country]
@@ -37,3 +31,16 @@
 # if __name__ == "__main__":
 #     sales = {"Thailand": 1500, "Laos": 1200, "Vietnam": 1800, "Japan": 1700, "China": 2000}
 #     print(highest_sales_country(sales))
+
+
+
+def highest_sales_country(sales: dict[str, int]) -> tuple[str, int]:
+    Max = 0
+    for key, value in sales.items():
+        if value > Max: Max = value
+    for key, value in sales.items():
+        if sales[key] == Max: return key, value
+
+if __name__ == "__main__":
+    sales = {"Thailand": 1500, "Laos": 1200, "Vietnam": 1800, "Japan": 1700, "China": 2000}
+    print(highest_sales_country(sales))
