@@ -7,12 +7,20 @@
 #             return amount * money
 #     return "Please check the target currency."
 
-def convert_thb_to_currency(amount: float, to_currency: str) -> float:
-    coin = {"USD":0.030,"EUR":0.027,"GBP":0.023,"JPY":3.4,"AUD":0.045}
-    if to_currency.upper() not in coin:
-        return "not support"
-    return amount * coin[to_currency.upper()]
+# def convert_thb_to_currency(amount: float, to_currency: str) -> float:
+#     coin = {"USD":0.030,"EUR":0.027,"GBP":0.023,"JPY":3.4,"AUD":0.045}
+#     if to_currency.upper() not in coin:
+#         return "not support"
+#     return amount * coin[to_currency.upper()]
 
-amount = 1000
-to_currency = "JPy"
-print(convert_thb_to_currency(amount, to_currency))
+# amount = 1000
+# to_currency = "JPy"
+# print(convert_thb_to_currency(amount, to_currency))
+
+def convert_thb_to_currency(amount: float, to_currency: str) -> float:
+    currencies = {"USD": 0.030, "EUR": 0.027, "GBP": 0.023, "JPY": 3.4, "AUD": 0.045}
+    return currencies[to_currency.upper()] * amount
+
+if __name__ == "__main__":
+    amount, to_currency = 1000, "USD"
+    print(convert_thb_to_currency(amount, to_currency))
