@@ -17,14 +17,33 @@
 #     return c10, c5, c2, c1   # คืนค่าเป็น tuple (เหรียญ10, 5, 2, 1)
 
 
-def calculate_coins(amount: int) -> tuple[int, int, int, int]:
-    c10 = amount // 10
-    amount %= 10
-    c5 = amount // 5
-    amount %= 5
-    c2 = amount // 2
-    amount %= 2
-    c1 = amount
-    return c10, c5, c2, c1
+# def calculate_coins(amount: int) -> tuple[int, int, int, int]:
+#     c10 = amount // 10
+#     amount %= 10
+#     c5 = amount // 5
+#     amount %= 5
+#     c2 = amount // 2
+#     amount %= 2
+#     c1 = amount
+#     return c10, c5, c2, c1
 
-print(calculate_coins(28))
+# print(calculate_coins(28))
+
+# def calculate_coins(amount: int) -> tuple[int, int, int, int]:
+#     c10 = amount // 10
+#     amount %= 10
+#     c5 = amount // 5
+#     amount %= 5
+#     c2 = amount // 2
+#     amount %= 2
+#     c1 = amount
+#     return c10, c5, c2, c1
+
+def calculate_coins(amount: int) -> tuple[int, int, int, int]:
+    coin_10, amount = divmod(amount, 10)
+    coin_5, amount = divmod(amount, 5)
+    coin_2, coin_1 = divmod(amount, 2)
+    return coin_10, coin_5, coin_2, coin_1
+
+if __name__ == "__main__":
+    print(calculate_coins(28))
