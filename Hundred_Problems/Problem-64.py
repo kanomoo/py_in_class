@@ -291,3 +291,23 @@
 # credits = [3, 4, 3, 2, 3]
 #
 # print(calculate_required_grades(current_gpa, target_gpa, credits))  # ['B+', 'B+', 'B+', 'B+', 'B+']
+
+
+
+def calculate_required_grades(current_gpa: float, target_gpa: float, credits: list[int]) -> list[str]:
+    # grade_test_list = [3, 2.5, 3, 2.5, 2.5]
+    # test_list = [grade_test_list[i] * v for i, v in enumerate(credits)]
+    # print(sum(test_list), sum(credits), sep = " ")
+    # print(sum(test_list) / sum(grade_test_list), sum(credits), sep = " ")
+    # print(sum(test_list)/ sum(credits))
+    # x = (3.5 - 2.8) * 2
+    # test = (2.8 + x) / 2
+
+    grade = {1.0: "D", 1.5: "D+", 2.0: "C", 2.5: "C+", 3.0: "B", 3.5: "B+", 4.0: "A"}
+    try: gpa = next(g for g in grade if (current_gpa + g) / 2 >= target_gpa)
+    except: return "gpa out of range"
+    return [grade[gpa]] * len(credits)
+
+if __name__ == "__main__":
+    current_gpa, target_gpa, credits = 2.8, 3.2, [3, 4, 3, 2, 3]
+    print(calculate_required_grades(current_gpa, target_gpa, credits))
