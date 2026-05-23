@@ -1,29 +1,29 @@
-# personal finance tracker
-income = []
-expense = []
+# # personal finance tracker
+# income = []
+# expense = []
 
-def add_income(amount: float, description: str) -> None:
-    income.append(description)
-    income.append(amount)
+# def add_income(amount: float, description: str) -> None:
+#     income.append(description)
+#     income.append(amount)
 
-def add_expense(amount: float, description: str) -> None:
-    expense.append(description)
-    expense.append(amount)
+# def add_expense(amount: float, description: str) -> None:
+#     expense.append(description)
+#     expense.append(amount)
 
-def display_income_entries() -> None:
-    print(income)
+# def display_income_entries() -> None:
+#     print(income)
 
-def display_expense_entries() -> None:
-    print(expense)
+# def display_expense_entries() -> None:
+#     print(expense)
 
-def calculate_balance() -> float:
-    return income[1] - expense[1]
+# def calculate_balance() -> float:
+#     return income[1] - expense[1]
 
-add_income(1000.0,"Salary")
-add_expense(150.0,"Groceries")
-display_income_entries()
-display_expense_entries()
-print(calculate_balance())
+# add_income(1000.0,"Salary")
+# add_expense(150.0,"Groceries")
+# display_income_entries()
+# display_expense_entries()
+# print(calculate_balance())
 
 
 
@@ -90,3 +90,30 @@ print(calculate_balance())
 # print()
 # calculate_balance()
 
+
+income, expense = {}, {}
+
+def add_income(amount: float, description: str) -> None:
+    income[description] = income.get(description, 0) + amount
+
+def add_expense(amount: float, description: str) -> None:
+    if sum(income.values()) - (sum(expense.values()) + amount) >= 0:
+        expense[description] = expense.get(description, 0) + amount
+    else: print(f"Expense {amount} not success")
+
+def display_income_entries() -> None:
+    print([f"{key}: {value}" for key, value in income.items()])
+
+def display_expense_entries() -> None:
+    print([f"{key}: {value}" for key, value in expense.items()])
+
+def calculate_balance() -> float:
+    return (sum(income.values()) - sum(expense.values()))
+
+if __name__ == "__main__":
+    add_income(1000.0, "Salary")
+    display_income_entries()
+    add_expense(150.0, "Groceries")
+    add_expense(150.0, "Groceries")
+    display_expense_entries()
+    print(calculate_balance())
