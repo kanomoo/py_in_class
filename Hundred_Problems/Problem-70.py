@@ -32,7 +32,24 @@
 
 
 def bank_account_management():
-    pass
+    money = 0
+    while True:
+        select = input("\n1. Deposit Money\n2. Withdraw Money\n3. Check Balance\n4. Exit Program\nSelect: ")
+        match select:
+            case "1":
+                deposit = int(input("\nDeposit Money: "))
+                money += deposit
+            case "2":
+                withdraw = int(input("\nWithdraw Money: "))
+                if money - withdraw >= 0: money -= withdraw
+                else: print(f"Withdraw {withdraw} not complect")
+            case "3": print(f"\nBalance = {money}")
+            case "4":
+                print("\nExit Program.")
+                exit()
+            case _: print("\nNo choice")
+        
+
 
 if __name__ == "__main__":
-    print(bank_account_management())
+    bank_account_management()

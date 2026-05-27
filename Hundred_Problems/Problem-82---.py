@@ -71,12 +71,35 @@ from itertools import permutations
 #             permutations.append(char + i)
 #     return permutations
 
-from itertools import permutations
+
+# from itertools import permutations
+
+# def find_permutations(s: str) -> list:
+#     result = []
+#     for i in permutations(s):
+#         result.append("".join(i))
+#     return result
+
+# print(find_permutations("abc"))
+
+
+# def find_permutations(s: str) -> list:
+#     return ([[s[i] + s[i + 1 if i + 1 < 2 else i - 1] + s[i + 2 if (i + 2) < 3 else (i + 1) % 3] for i in range(len(s))],\
+#         [s[i] + s[i + 2 if (i + 2) < 3 else (i + 1) % 3] + s[i + 1 if i + 1 < 2 else i - 1]  for i in range(len(s))]])
+
+# if __name__ == "__main__":
+#     print(find_permutations("abc"))
+
 
 def find_permutations(s: str) -> list:
-    result = []
-    for i in permutations(s):
-        result.append("".join(i))
-    return result
+    if len(s) <= 1: return s
+    permutations = []
+    for i in range(len(s)):
+        char = s[i]
+        re = s[:i] + s[i + 1:]
+        for n in find_permutations(re):
+            permutations.append(char + n)
+    return sorted(permutations)
 
-print(find_permutations("abc"))
+if __name__ == "__main__":
+    print(find_permutations("abc"))

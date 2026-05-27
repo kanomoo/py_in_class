@@ -87,18 +87,47 @@
 # [4, 2, 1] ]
 # print(min_cost_path(grid))
 
-def min_cost_path(grid :list) -> int:
-    result = sum(grid[0])
-    for i in range(1,len(grid)):
-        result += grid[i][-1]
-    return result
+# def min_cost_path(grid :list) -> int:
+#     result = sum(grid[0])
+#     for i in range(1,len(grid)):
+#         result += grid[i][-1]
+#     return result
 
-# grid = [ [1, 3, 1],
-# [1, 5, 1],
-# [4, 2, 1] ]
+# # grid = [ [1, 3, 1],
+# # [1, 5, 1],
+# # [4, 2, 1] ]
 
-grid = [[1, 2, 3],
-[4, 8, 2],
-[1, 5, 3]]
+# grid = [[1, 2, 3],
+# [4, 8, 2],
+# [1, 5, 3]]
 
-print(min_cost_path(grid))
+# print(min_cost_path(grid))
+
+
+
+# def min_cost_path(grid: list) -> int:
+#     for row in grid:
+
+# if __name__ == "__main__":
+#     grid = [[1, 3, 1],
+#             [1, 5, 1],
+#             [4, 2, 1]]
+#     print(min_cost_path(grid))
+
+
+# fibo O(2 ^ n) ใหญ่เกิน
+def fibonacci(n : int) -> int:
+    if n <= 1: return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+# def fibo(n: int, memo: dict = None) -> int:
+#     if memo is None: memo = {}
+#     if n <= 1: return n
+#     if n in memo: return memo[n]
+#     memo[n] = fibo(n - 1, memo) + fibo(n - 2, memo)
+#     return memo[n]
+
+
+
+if __name__ == "__main__":
+    print(fibonacci(10))

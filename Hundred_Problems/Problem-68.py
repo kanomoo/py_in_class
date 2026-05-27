@@ -55,6 +55,7 @@ def number_guessing_game() -> None:
             case "3":
                 print("\nThank you for playing! Goodbye!")
                 exit()
+            case _: print("\nNo choice")
 
 if __name__ == "__main__":
     number_guessing_game()
