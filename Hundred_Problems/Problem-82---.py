@@ -91,15 +91,39 @@ from itertools import permutations
 #     print(find_permutations("abc"))
 
 
+# def find_permutations(s: str) -> list:
+#     if len(s) <= 1: return s
+#     permutations = []
+#     for i in range(len(s)):
+#         char = s[i]
+#         re = s[:i] + s[i + 1:]
+#         for n in find_permutations(re):
+#             permutations.append(char + n)
+#     return sorted(permutations)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def find_permutations(s: str) -> list:
-    if len(s) <= 1: return s
+    if len(s) == 1: return s
     permutations = []
     for i in range(len(s)):
-        char = s[i]
-        re = s[:i] + s[i + 1:]
+        char, re = s[i], s[:i] + s[i + 1:]
         for n in find_permutations(re):
             permutations.append(char + n)
-    return sorted(permutations)
+    return permutations
 
 if __name__ == "__main__":
     print(find_permutations("abc"))
