@@ -21,12 +21,10 @@
 #         return memo[n]
 #     return f(n)
 
-## Recursive Backtracking
 # def fibo(n: int) -> int:
 #     if n <= 1: return n
 #     return fibo(n - 1) + fibo(n - 2)
 
-# #Top-Down DP
 # def fibo(n: int) -> int:
 #     memo = {0: 0, 1: 1}
 #     def f(n: int) -> int:
@@ -35,7 +33,60 @@
 #         return memo[n]
 #     return f(n)
 
-## Bottom-Up df (tabulation)
+# def fibo(n: int) -> int:
+#     dp = [0, 1]
+#     if n in dp: return dp[n]
+#     for i in range(2, n + 1):
+#         dp.append(dp[i - 2] + dp[i - 1])
+#     return dp[n]
+
+# def fibo(n: int) -> int:
+#     if n <= 1: return n
+#     a, b = 0, 1
+#     for i in range(2, n + 1):
+#         a, b = b, a + b
+#     return b
+
+# def fibo(n: int) -> int:
+#     if n <= 1: return n
+#     return fibo(n - 2) + fibo(n - 1)
+
+# def fibo(n: int) -> int:
+#     memo = {0: 0, 1: 1}
+#     def f(n: int) -> int:
+#         if n in memo: return memo[n]
+#         memo[n] = f(n - 2) + f(n - 1)
+#         return memo[n]
+#     return f(n)
+
+# def fibo(n: int) -> int:
+#     dp = [0, 1]
+#     for i in range(2, n + 1): dp.append(dp[i - 2] + dp[i - 1])
+#     return dp[n]
+
+# def fibo(n: int) -> int:
+#     previous, current = 0, 1
+#     for i in range(2, n + 1):
+#         previous, current = current, previous + current
+#     return current
+
+
+
+## Recursive Backtracking
+# def fibo(n: int) -> int:
+#     if n <= 1: return n
+#     return fibo(n - 1) + fibo(n - 2)
+
+# #Top-Down DP (Memoization)
+# def fibo(n: int) -> int:
+#     memo = {0: 0, 1: 1}
+#     def f(n: int) -> int:
+#         if n in memo: return memo[n]
+#         memo[n] = f(n - 1) + f(n - 2)
+#         return memo[n]
+#     return f(n)
+
+## Bottom-Up df (Tabulation)
 # def fibo(n: int) -> int:
 #     dp = [0, 1]
 #     for i in range(2, n + 1):
@@ -43,13 +94,15 @@
 #         dp.append(new)
 #     return dp[n]
 
-def fibo(n):
-    if n < 2: return n
-    prev, cur = 0, 1
-    for i in range(2, n + 1):
-        prev, cur = cur, cur + prev
-    return cur
+## Bottom-Up No-Memory DP
+# def fibo(n):
+#     if n < 2: return n
+#     prev, cur = 0, 1
+#     for _ in range(2, n + 1):
+#         prev = cur
+#         cur = cur + prev
+#     return cur
 
 # 0 1 1 2 3 5
 if __name__ == "__main__":
-    print(fibo(10000))
+    print(fibo(5000))
