@@ -115,10 +115,10 @@
 #     print(min_cost_path(grid))
 
 
-# fibo O(2 ^ n) ใหญ่เกิน
-def fibonacci(n : int) -> int:
-    if n <= 1: return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
+# # fibo O(2 ^ n) ใหญ่เกิน
+# def fibonacci(n : int) -> int:
+#     if n <= 1: return n
+#     return fibonacci(n - 1) + fibonacci(n - 2)
 
 # def fibo(n: int, memo: dict = None) -> int:
 #     if memo is None: memo = {}
@@ -128,6 +128,112 @@ def fibonacci(n : int) -> int:
 #     return memo[n]
 
 
+# # แบบปกติ
+# def min_cost_path(grid: list) -> int:
+#     if not grid or not grid[0]: return 0
+#     rows = len(grid)
+#     cols = len(grid[0])
+    
+#     dp = [[0 for _ in range(cols)] for _ in range(rows)]
+#     dp[0][0] = grid[0][0]
+
+#     for c in range(1, cols): dp[0][c] = dp[0][c-1] + grid[0][c]
+        
+#     for r in range(1, rows): dp[r][0] = dp[r-1][0] + grid[r][0]
+        
+#     for r in range(1, rows):
+#         for c in range(1, cols):
+#             dp[r][c] = min(dp[r-1][c], dp[r][c-1]) + grid[r][c]
+            
+#     return dp[rows-1][cols-1]
+
+
+## O(rows x clos)
+# def min_cost_path(grid: list) -> int:
+#     if not grid or not grid[0]: return 0
+#     rows = len(grid)
+#     cols = len(grid[0])
+#     dp = [[0] * cols for _ in range(rows)]
+#     dp[0][0] = grid[0][0]
+#     for c in range(1, cols): dp[0][c] = dp[0][c - 1] + grid[0][c]
+#     for r in range(1, rows): dp[r][0] = dp[r - 1][0] + grid[r][0]
+#     for r in range(1, rows):
+#         for c in range(1, cols):
+#             dp[r][c] = min(dp[r - 1][c], dp[r][c - 1]) + grid[r][c]
+#     return dp[rows - 1][cols - 1]
+
+
+## O(cols)
+# def min_cost_path(grid: list[list[int]]) -> int:
+#     if not grid or not grid[0]: return 0
+#     rows, cols = len(grid), len(grid[0])
+#     dp = [0] * cols
+#     dp[0] = grid[0][0]
+#     for c in range(1, cols): dp[c] = dp[c-1] + grid[0][c]
+#     for r in range(1, rows):
+#         dp[0] += grid[r][0]
+#         for c in range(1, cols):
+#             dp[c] = min(dp[c], dp[c-1]) + grid[r][c]
+#     return dp[cols-1]
+
+
+
+# def min_cost_path(grid: list) -> int:
+#     if not grid or not grid[0]: return 0
+#     rows, cols = len(grid), len(grid[0])
+#     dp, dp[0][0] = [[0 for _ in range(cols)] for _ in range(rows)], grid[0][0]
+#     for c in range(1, cols): dp[0][c] = dp[0][c - 1] + grid[0][c]
+#     for r in range(1, rows): dp[r][0] = dp[r - 1][0] + grid[r][0]
+#     for r in range(1, rows):
+#         for c in range(1, cols):
+#             dp[r][c] = min(dp[r - 1][c], dp[r][c - 1]) + grid[r][c]
+#     return dp[rows - 1][cols - 1]
+
+
+# def min_cost_path(grid: list) -> int:
+#     if not grid or not grid[0]: return 0
+#     rows, cols = len(grid), len(grid[0])
+#     dp, dp[0] = [0] * cols, grid[0][0]
+#     for c in range(1, cols): dp[c] = dp[c - 1] + grid[0][c]
+#     for r in range(1, rows):
+#         dp[0] += grid[r][0]
+#         for c in range(1, cols):
+#             dp[c] = min(dp[c], dp[c - 1]) + grid[r][c]
+#     return dp[cols - 1]
+
+
+
+
+# def min_cost_path(grid: list) -> int:
+#     if not grid or not grid[0]: return 0
+#     rows, cols = len(grid), len(grid[0])
+#     dp, dp[0][0] = [[0] * cols for _ in range(rows)], grid[0][0]
+#     for c in range(1, cols): dp[0][c] = dp[0][c - 1] + grid[0][c]
+#     for r in range(1, rows): dp[r][0] = dp[r - 1][0] + grid[r][0]
+#     for r in range(1, rows):
+#         for c in range(1, cols):
+#             dp[r][c] = min(dp[r - 1][c], dp[r][c - 1]) + grid[r][c]
+#     return dp[rows - 1][cols - 1]
+
+
+def min_cost_path(grid: list) -> int:
+    if not grid or not grid[0]: return 0
+    rows, cols = len(grid), len(grid[0])
+    dp, dp[0] = [0] * cols, grid[0][0]
+    for c in range(1, cols): dp[c] = dp[c - 1] + grid[0][c]
+    for r in range(1, rows):
+        dp[0] += grid[r][0]
+        for c in range(1, cols):
+            dp[c] = min(dp[c - 1], dp[c]) + grid[r][c]
+    return dp[cols - 1]
 
 if __name__ == "__main__":
-    print(fibonacci(10))
+    grid = [[1, 3, 1],
+            [1, 5, 1],
+            [4, 2, 1]]
+    
+    # grid = [[1, 2, 3],
+    #         [4, 8, 2],
+    #         [1, 5, 3]]
+
+    print(min_cost_path(grid))
