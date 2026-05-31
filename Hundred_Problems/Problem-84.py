@@ -84,22 +84,130 @@
 #     return backtrack(0, k, 0)
 
 
-def can_partition_k_subsets(nums: list, k: int):
+# def can_partition_k_subsets(nums: list, k: int):
+#     if sum(nums) % k != 0: return False
+#     nums.sort(reverse = True)
+#     target = sum(nums) // k
+#     used = [False] * len(nums)
+
+#     def backtrack(i, k, subsetSum):
+#         if k == 0: return True
+#         if subsetSum == target: return backtrack(0, k - 1, 0)
+
+#         for index in range(len(nums)):
+#             if used[index] or subsetSum + used[index] > target: continue
+#             used[index] = True
+#             if backtrack(index + 1, k, subsetSum + nums[index]): return True
+#             used[index] = False
+#         return False
+
+#     return backtrack(0, k, 0)
+
+
+# def can_partition_k_subsets(nums: list, k: int) -> bool:
+#     if sum(nums) % k != 0: return False
+#     nums.sort(reverse = True)
+#     target = sum(nums) // k
+#     used = [False] * len(nums)
+
+#     def backtrack(i: int, k: int, subsetSum: int):
+#         if k == 0: return True
+#         if target == subsetSum: return backtrack(0, k - 1, 0)
+
+#         for index in range(len(nums)):
+#             if used[index] or used[index] + subsetSum > target: continue
+#             used[index] = True
+#             if backtrack(index + 1, k, nums[index] + subsetSum): return True
+#             used[index] = False
+#         return False
+    
+#     return backtrack(0, k, 0)
+
+
+
+# def can_partition_k_subsets(nums: list, k: int) -> bool:
+#     if sum(nums) % k != 0: return False
+#     nums.sort(reverse = True)
+#     target = sum(nums) // k
+#     used = [False] * len(nums)
+
+#     def backtracking(i: int, k: int, subsetSum) -> bool:
+#         if k == 0: return True
+#         if subsetSum == target: return backtracking(0, k - 1, 0)
+        
+#         for index in range(len(nums)):
+#             if used[index] or used[index] + subsetSum > target: continue
+#             used[index] = True
+#             if backtracking(index + 1, k, nums[index] + subsetSum): return True
+#             used[index] = False
+#         return False
+
+#     return backtracking(0, k, 0)
+
+
+# def can_partition_k_subsets(nums: list, k: int) -> bool:
+#     if sum(nums) % k != 0: return False
+#     nums.sort(reverse = True)
+#     target = sum(nums) // k
+#     used = [False] * len(nums)
+
+#     def backtrack(i: int, k: int, subsetSum) -> bool:
+#         if k == 0: return True
+#         if target == subsetSum: return backtrack(0, k - 1, 0)
+
+#         for index in range(len(nums)):
+#             if used[index] or nums[index] + subsetSum > target: continue
+#             used[index] = True
+#             if backtrack(index + 1, k, nums[index] + subsetSum): return True
+#             used[index] = False
+#         return False
+
+#     return backtrack(0, k, 0)
+
+
+
+
+
+# def can_partition_k_subsets(nums: list, k: int) -> bool:
+#     if sum(nums) % k != 0: return False
+#     target = sum(nums) // k
+#     nums.sort(reverse = True)
+#     used = [False] * len(nums)
+
+#     def backtrack(i: int, k: int, subsetSum: int) -> bool:
+#         if k == 0: return True
+#         if target == subsetSum: return backtrack(0, k - 1, 0)
+
+#         for index in range(len(nums)):
+#             if used[index] or used[index] + subsetSum > target: continue
+#             used[index] = True
+#             if backtrack(index + 1, k, nums[index] + subsetSum): return True
+#             used[index] = False
+#         return False
+    
+#     return backtrack(0, k, 0)
+
+
+
+
+def can_partition_k_subsets(nums: list, k: int) -> bool:
     if sum(nums) % k != 0: return False
     nums.sort(reverse = True)
     target = sum(nums) // k
     used = [False] * len(nums)
-    def backtrack(i, k, subsetSum):
-        if k == 0: return True
-        if subsetSum == target: return backtrack(0, k - 1, 0)
-        for j in range(i, len(nums)):
-            if used[j] or subsetSum + nums[j] > target: continue
-            used[j] = True
-            if backtrack(j + 1, k, subsetSum + nums[j]): return True
-            used[j] = False
-        return False
-    return backtrack(0, k, 0)
 
+    def backtrack(i: int, k: int, subsetSum) -> bool:
+        if k == 0: return True
+        if target == subsetSum: return backtrack(0, k - 1, 0)
+
+        for index in range(len(nums)):
+            if used[index] or nums[index] + subsetSum > target: continue
+            used[index] = True
+            if backtrack(index + 1, k, nums[index] + subsetSum): return True
+            used[index] = False
+        return False
+
+    return backtrack(0, k, 0)
 
 
 if __name__ == "__main__":
